@@ -1,0 +1,32 @@
+[
+    {
+      "id": 1,
+      "title": "Lenovo",
+      "description": "Computador portátil",
+      "code": "COD01",
+      "price": 900,
+      "status": true,
+      "stock": 15,
+      "category": "Empresas"
+    },
+    {
+      "id": 2,
+      "title": "Asus",
+      "description": "Computador portátil",
+      "code": "COD02",
+      "price": 1300,
+      "status": true,
+      "stock": 9,
+      "category": "Gamers"
+    },
+    {
+      "id": 3,
+      "title": "Dell",
+      "description": "Computador portátil",
+      "code": "COD03",
+      "price": 1800,
+      "status": true,
+      "stock": 5,
+      "category": "Diseño"
+    }
+  ]
