@@ -16,7 +16,7 @@
       "code": "COD02",
       "price": 1300,
       "status": true,
-      "stock": 9,
+      "stock": 39,
       "category": "Gamers"
     },
     {
@@ -26,7 +26,7 @@
       "code": "COD03",
       "price": 1800,
       "status": true,
-      "stock": 5,
+      "stock": 25,
       "category": "Diseño"
     }
   ]
