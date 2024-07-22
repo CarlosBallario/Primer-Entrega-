@@ -4,7 +4,11 @@
     "products": [
       {
         "id": 2,
-        "quantity": 3
+        "quantity": 5
+      },
+      {
+        "product": "2",
+        "quantity": 1
       }
     ]
   },
@@ -13,7 +17,7 @@
     "products": [
       {
         "id": 1,
-        "quantity": 2
+        "quantity": 3
       }
     ]
   },
@@ -27,20 +31,11 @@
     ]
   },
   {
-    "id": "4",
+    "id": 4,
     "products": [
       {
-        "name": "Producto nuevo",
-        "quantity": 1
-      }
-    ]
-  },
-  {
-    "id": "5",
-    "products": [
-      {
-        "name": "Producto en promoción ",
-        "quantity": 5
+        "id": 4,
+        "quantity": 3
       }
     ]
   }

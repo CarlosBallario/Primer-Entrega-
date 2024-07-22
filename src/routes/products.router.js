@@ -47,10 +47,10 @@ router.post('/Compus', (req, res) => {
             return res.status(500).json({ ERROR: "Error interno del Servidor" });
         }
         const product = JSON.parse(data);
-        const id = products.length + 1;
+        const id = product.length + 1;
         const newProduct = { id, title, description, code, price, status, stock, category };
-        products.push(newProduct);
-        fs.writeFile('products.json', JSON.stringify(products, null, 2), error => {
+        product.push(newProduct);
+        fs.writeFile('products.json', JSON.stringify(product, null, 2), error => {
             if (error) {
                 console.error(error);
                 return res.status(500).json({ ERROR: " Error interno del Servidor" });
@@ -60,6 +60,57 @@ router.post('/Compus', (req, res) => {
 
     })
 })
+
+// Endpoint put para actualizar un producto por su Id
+router.put('/Compus/:id', (req, res) => {
+    const id = req.params.id;
+    const { title, description, code, price, status, stock, category } = req.body;
+    fs.readFile('products.json', 'utf8', (error, data) => {
+        if (error) {
+            console.error(error);
+            return res.status(500).json({ ERROR: "Error interno del Servidor" });
+        }
+        let products = JSON.parse(data);
+        const productIndex = products.findIndex(product => product.id === parseInt(id));
+        if (productIndex !== -1) {
+            products[productIndex] = { id: parseInt(id), title, description, code, price, status, stock, category };
+            fs.writeFile('products.json', JSON.stringify(products, null, 2), error => {
+                if (error) {
+                    console.error(error);
+                    return res.status(500).json({ ERROR: "Error interno del Servidor" });
+                }
+                res.json(products[productIndex]);
+            });
+        } else {
+            res.status(404).json({ ERROR: "El producto no fue encontrado" });
+        }
+    });
+});
+
+// Endpoint delete para eliminar un producto por su Id
+router.delete('/Compus/:id', (req, res) => {
+    const id = req.params.id;
+    fs.readFile('products.json', 'utf8', (error, data) => {
+        if (error) {
+            console.error(error);
+            return res.status(500).json({ ERROR: "Error interno del Servidor" });
+        }
+        let products = JSON.parse(data);
+        const newProducts = products.filter(product => product.id !== parseInt(id));
+        if (products.length !== newProducts.length) {
+            fs.writeFile('products.json', JSON.stringify(newProducts, null, 2), error => {
+                if (error) {
+                    console.error(error);
+                    return res.status(500).json({ ERROR: "Error interno del Servidor" });
+                }
+                res.json({ message: "Producto eliminado correctamente" });
+            });
+        } else {
+            res.status(404).json({ ERROR: "El producto no fue encontrado" });
+        }
+    });
+});
+
 
 
 export default router
