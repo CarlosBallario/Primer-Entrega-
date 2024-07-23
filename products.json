@@ -51,12 +51,22 @@
   },
   {
     "id": 6,
-    "title": "ACER",
+    "title": "Compact",
+    "description": "Computador portátil",
+    "code": "COD01",
+    "price": 900,
+    "status": true,
+    "stock": 150,
+    "category": "Pymes"
+  },
+  {
+    "id": 7,
+    "title": "Bangho",
     "description": "Computador portátil",
     "code": "COD06",
-    "price": 200,
+    "price": 900,
     "status": true,
-    "stock": 80,
-    "category": "Hogar"
+    "stock": 67,
+    "category": "Pymes/Hogar"
   }
 ]

@@ -78,7 +78,7 @@ router.post('/:cid/carrito/:id', (req, res) => {
 });
 
 // Endpoint put para actualizar la cantidad de un producto en el carrito
-router.put('/carrito/:cid/Compus/:id', (req, res) => {
+router.put('/:cid/carrito/:id', (req, res) => {
     const cartId = req.params.cid;
     const productId = req.params.id;
     const { quantity } = req.body;
@@ -111,7 +111,7 @@ router.put('/carrito/:cid/Compus/:id', (req, res) => {
 });
 
 // Endpoint delete para eliminar un producto del carrito
-router.delete('/carrito/:cid/Compus/:id', (req, res) => {
+router.delete('/:cid/carrito/:id', (req, res) => {
     const cartId = req.params.cid;
     const productId = req.params.id;
 
